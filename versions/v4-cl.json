@@ -1,0 +1,16 @@
+{
+  "release": "v4-cl",
+  "poolTypes": ["CL"],
+  "core": {
+    "repository": "https://github.com/sushi-labs/infinity-core.git",
+    "branch": "sushi-v4",
+    "commit": "bd4ac0678feacc55922f1d74ff40a00a9589c4aa",
+    "upstreamBase": "7c04695faeab8b06570cf6c277d9a9717136fb26"
+  },
+  "periphery": {
+    "repository": "https://github.com/sushi-labs/infinity-periphery.git",
+    "branch": "sushi-v4",
+    "commit": "fbab906968871c16f909632719a9cbca88ecc916",
+    "upstreamBase": "f39aef4a1be63e5404e686bf621436bbfe58f6aa"
+  }
+}
