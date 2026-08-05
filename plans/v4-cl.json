@@ -1,0 +1,27 @@
+{
+  "release": "v4-cl",
+  "deploymentMethod": "CREATE",
+  "deployer": "0xc299b6425Fbc3851ed0eaa3C75931CDc927a271c",
+  "invariant": "The deployment account must submit exactly these eight contract-creation transactions, in order, on every chain before any setup or ownership transaction.",
+  "deployments": [
+    { "nonce": 0, "contract": "SushiSwapV4Vault", "address": "0xeb4F1e157D18B1a4D09a5207A96e17601ea354b2", "repository": "core" },
+    { "nonce": 1, "contract": "SushiSwapV4CLPoolManager", "address": "0x81D732702f87D2D652aE79e9F52bf44928eCA210", "repository": "core" },
+    { "nonce": 2, "contract": "SushiSwapV4CLProtocolFeeController", "address": "0x6774cA40DF651C3139d25f61D3B5cDBC8aeC63de", "repository": "core" },
+    { "nonce": 3, "contract": "SushiSwapV4CLPoolManagerOwner", "address": "0x06c00AD14cd3ddca426980e8A2704D1Ff017D90d", "repository": "core" },
+    { "nonce": 4, "contract": "SushiSwapV4CLPositionDescriptor", "address": "0x340D5FE5Dc8704e147B0cd7464cC8995Cde23D6D", "repository": "periphery" },
+    { "nonce": 5, "contract": "SushiSwapV4CLPositionManager", "address": "0xd3d35fBc4E44523CA3cD383C1948322Ddb42F644", "repository": "periphery" },
+    { "nonce": 6, "contract": "SushiSwapV4CLQuoter", "address": "0x2a0819373b09EC553e7B15808F76601362B1C291", "repository": "periphery" },
+    { "nonce": 7, "contract": "SushiSwapV4CLTickLens", "address": "0xBb9757cB480a08730F372DFE3068a6E86f35c63A", "repository": "periphery" }
+  ],
+  "governanceOwnerSource": "https://docs.google.com/spreadsheets/d/1xK6WDGzZNrEHU9Ykva_cprp3vwm4r5GKPYWHg22dFHw/edit?gid=0#gid=0",
+  "governanceOwners": {
+    "1": "0x19B3Eb3Af5D93b77a5619b047De0EED7115A19e7",
+    "8453": "0xFcD4e19Dd044cBa929cF1EEfc1C181aE4f5beCe8",
+    "137": "0x850a57630A2012B2494779fBc86bBc24F2a7baeF",
+    "130": null,
+    "480": null,
+    "42161": "0x978982772b8e4055B921bf9295c0d74eB36Bc54e",
+    "56": "0xc6fD91aD4919Fd91e2c84077ba648092cB499638",
+    "4663": null
+  }
+}
