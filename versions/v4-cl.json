@@ -4,13 +4,13 @@
   "core": {
     "repository": "https://github.com/sushi-labs/infinity-core.git",
     "branch": "sushi-v4",
-    "commit": "18eddee02f90bb6418141d841bf17d937a48a944",
+    "commit": "bfc39b653e34c0f6a39f7d3e5cd8161712530461",
     "upstreamBase": "7c04695faeab8b06570cf6c277d9a9717136fb26"
   },
   "periphery": {
     "repository": "https://github.com/sushi-labs/infinity-periphery.git",
     "branch": "sushi-v4",
-    "commit": "744100bda75b3691a64cfe73de7a57512ad1468e",
+    "commit": "f753b209474dc49a1547eda2065f9b63b4b56666",
     "upstreamBase": "f39aef4a1be63e5404e686bf621436bbfe58f6aa"
   }
 }
