@@ -7,6 +7,8 @@ Canonical source-version and onchain deployment records for SushiSwap V4.
 
 The initial `v4-cl` release includes concentrated-liquidity contracts only. Sushi routing is maintained separately and is not deployed from the Infinity Periphery repository.
 
+The initial Sushi pool policy is static-fee CL pools only. No official dynamic-fee hook is included in this release. The Core contracts retain their generic hook and dynamic-fee interfaces for independently developed or third-party hooks.
+
 ## Initial launch chains
 
 - Ethereum
@@ -30,3 +32,7 @@ Before deployment, each chain still requires:
 4. RPC, explorer verification settings, and a funded deployment signer supplied through the deployment environment.
 
 Vault, CL PoolManager, protocol fee controller, PoolManager owner, position descriptor, position manager, quoter, and tick lens addresses are deployment outputs. Record each output in the active chain config before running its dependent step, then publish the final addresses under `chains/`.
+
+## Local deployment environment
+
+Copy `.env.example` to the ignored `.env` file and source it before running deployment commands. The template defines one DRPC URL per launch chain. Never commit `.env` or pass its private key on the command line in shared logs.
