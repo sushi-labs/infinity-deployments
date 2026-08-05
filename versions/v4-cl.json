@@ -10,7 +10,7 @@
   "periphery": {
     "repository": "https://github.com/sushi-labs/infinity-periphery.git",
     "branch": "sushi-v4",
-    "commit": "70874963d3006cb58eae09ca4b0c918cc8806b68",
+    "commit": "1f782f3c6079e89bf2fac4a9d68d18b76d594564",
     "upstreamBase": "f39aef4a1be63e5404e686bf621436bbfe58f6aa"
   }
 }
