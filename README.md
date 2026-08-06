@@ -32,12 +32,16 @@ token addresses are sourced from `sushi-labs/sushi` at commit `30b6e3de015077a14
 The canonical Permit2 deployment at `0x000000000022d473030f116ddee9f6b43ac78ba3` was checked for
 deployed bytecode on all eight launch chains.
 
-Before deployment, each chain still requires:
+Explorer verification settings are pinned by chain in `plans/v4-cl.json`. Seven launch chains use
+Etherscan API V2 with one `ETHERSCAN_API_KEY`; Robinhood Chain uses its official Blockscout endpoint.
+Verification must be performed only after nonce 7 is mined, and does not require the deployment key.
 
-1. Explorer verification settings.
-
-The launch protocol share is fixed at 33% of each pool's total swap fee. Core setup validates the
-deployed controller's `330000 / 1000000` split before registering and handing off the CL contracts.
+The launch protocol share is configured to 33% of each static pool's total swap fee. Core setup
+validates the deployed controller's `330000 / 1000000` split before registering and handing off the
+CL contracts. Governance can change this ratio after handoff. The underlying controller caps the
+protocol fee at 0.4% of volume per direction, so the exact 33% split applies only up to approximately
+a 1.21% total swap fee. Dynamic-fee pools use a separately governed default protocol fee and are not
+part of the official launch policy.
 
 The eight launch contracts use direct EVM `CREATE`, not CREATE2/CREATE3. Their addresses are determined
 only by the dedicated deployment account and nonce, and are precomputed in `plans/v4-cl.json`. The
@@ -51,6 +55,15 @@ nonce. A mined, reverted creation transaction still consumes its nonce; if that 
 the planned addresses cannot be recovered from this deployment account on that chain. Stop the rollout
 and choose either a fresh deployment account for every chain or explicitly abandon cross-chain address
 parity.
+
+Each script config includes the target chain ID and aborts when paired with the wrong RPC. Before any
+mainnet broadcast, run `scripts/check-v4-cl-configs.sh` and `scripts/rehearse-v4-cl.sh` from this
+repository with the deployment environment loaded. The static check recomputes all eight CREATE
+addresses, enforces the release's pinned Foundry toolchain, and compares the deployment plan,
+governance owners, and both repositories' chain configs.
+The rehearsal forks every launch chain into a local Anvil instance, executes the complete
+nonce 0-7 sequence plus setup and governance handoff locally, and checks deployed code, immutables,
+fee policy, and ownership state. It never broadcasts to a remote chain.
 
 ## Local deployment environment
 
