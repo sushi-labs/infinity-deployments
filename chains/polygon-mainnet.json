@@ -1,0 +1,99 @@
+{
+  "release": "v4-cl",
+  "network": "Polygon",
+  "config": "polygon-mainnet",
+  "chainId": 137,
+  "deployedAt": "2026-08-06",
+  "deployer": "0xc299b6425Fbc3851ed0eaa3C75931CDc927a271c",
+  "deployerFinalNonce": 15,
+  "governanceOwner": "0x850a57630a2012b2494779fbc86bbc24f2a7baef",
+  "protocolFeeControllerOwner": "0x850a57630a2012b2494779fbc86bbc24f2a7baef",
+  "contracts": {
+    "SushiSwapV4Vault": {
+      "address": "0xeb4F1e157D18B1a4D09a5207A96e17601ea354b2",
+      "transactionHash": "0xe25a8ce3e68330500fdc06350a4b312d8c5cc3f5221f638ce05f621168722f15",
+      "verified": true
+    },
+    "SushiSwapV4CLPoolManager": {
+      "address": "0x81D732702f87D2D652aE79e9F52bf44928eCA210",
+      "transactionHash": "0x32c0fcd598c4351ed321d11d4fdd6e3f917ca5657f467748244a2d60fb2c3200",
+      "verified": true
+    },
+    "SushiSwapV4CLProtocolFeeController": {
+      "address": "0x6774cA40DF651C3139d25f61D3B5cDBC8aeC63de",
+      "transactionHash": "0xc807f6721013a9d5be33210302a74bdac70456bcb43ee6e7563d270de2d745e8",
+      "verified": true
+    },
+    "SushiSwapV4CLPoolManagerOwner": {
+      "address": "0x06c00AD14cd3ddca426980e8A2704D1Ff017D90d",
+      "transactionHash": "0xda43a0bf3cc54520ca0f9cca604348f6283516528b44a7433b6b64693a21bafb",
+      "verified": true
+    },
+    "SushiSwapV4CLPositionDescriptor": {
+      "address": "0x340D5FE5Dc8704e147B0cd7464cC8995Cde23D6D",
+      "transactionHash": "0x0570bfa092f883fdcd8d1ea1fdb81bcc9bee52fdb753eaa3827854afe7ef6b74",
+      "verified": true
+    },
+    "SushiSwapV4CLPositionManager": {
+      "address": "0xd3d35fBc4E44523CA3cD383C1948322Ddb42F644",
+      "transactionHash": "0x65a41d03986ac5315d800269a437b61b021d7c21097b022f042c7f26b32aa355",
+      "verified": true
+    },
+    "SushiSwapV4CLQuoter": {
+      "address": "0x2a0819373b09EC553e7B15808F76601362B1C291",
+      "transactionHash": "0xe1ab65ca477385b59767a905c1475c0f0fc511b6d9dc8422e91b79d109558f90",
+      "verified": true
+    },
+    "SushiSwapV4CLTickLens": {
+      "address": "0xBb9757cB480a08730F372DFE3068a6E86f35c63A",
+      "transactionHash": "0x7df56c783818c6c60ae150fe911c4d03134f208bd92c1759cd869c20b806a875",
+      "verified": true
+    }
+  },
+  "postDeploymentTransactions": {
+    "configureCL": [
+      "0xb5c3ca0ad636811859679bc892c9e42e19e93ff50d7d0f1f9fc371015f900914",
+      "0xed58cca0e7b3f94516a03c17a2da338638d0dcdb6e804a556e9ef7b102e22d3a",
+      "0xc7062b945359d4cdfa3a1949e8dad25bcca98bc882e0f9d9415a10473d02d6fc"
+    ],
+    "transferDescriptorOwnership": [
+      "0x9eaf728fbccd24ee17dfba7fe82c2e41903f71311428524a3ae7feb298f5e070"
+    ],
+    "initiateCoreOwnershipHandoffs": [
+      "0x3982fc15f550d687883a62245a9598c851694fc356af773b19e4e1dec39447f8",
+      "0x49333c83d81b6aea25fd15a4059a6cd7014b753aa9a14fbfacd1b7885795dd00",
+      "0x66a93b1bf2acf51c776240104adafa5664b00133bedf97ce2f1a3d764ad4698c"
+    ]
+  },
+  "ownership": {
+    "positionDescriptor": "transferred",
+    "vault": "pendingAcceptance",
+    "clPoolManagerOwner": "pendingAcceptance",
+    "clProtocolFeeController": "pendingAcceptance"
+  },
+  "requiredSafeTransactions": [
+    {
+      "to": "0xeb4F1e157D18B1a4D09a5207A96e17601ea354b2",
+      "value": "0",
+      "data": "0x79ba5097",
+      "description": "Accept SushiSwapV4Vault ownership"
+    },
+    {
+      "to": "0x06c00AD14cd3ddca426980e8A2704D1Ff017D90d",
+      "value": "0",
+      "data": "0x79ba5097",
+      "description": "Accept SushiSwapV4CLPoolManagerOwner ownership"
+    },
+    {
+      "to": "0x6774cA40DF651C3139d25f61D3B5cDBC8aeC63de",
+      "value": "0",
+      "data": "0x79ba5097",
+      "description": "Accept SushiSwapV4CLProtocolFeeController ownership"
+    }
+  ],
+  "sourceVerification": {
+    "status": "verified",
+    "provider": "etherscan",
+    "explorer": "https://polygonscan.com"
+  }
+}
