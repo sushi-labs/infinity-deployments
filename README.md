@@ -27,16 +27,15 @@ the corresponding value is required.
 
 Governance multisigs are sourced from the Sushi operations spreadsheet and direct confirmation from
 Sushi operations. Ethereum, Base, Polygon, Arbitrum, BNB Chain, and Robinhood Chain are populated.
-The sheet does not currently list Unichain or World Chain, so those two remain deliberately unresolved. Fixed wrapped-native token addresses
-are sourced from `sushi-labs/sushi` at commit `30b6e3de015077a14b97dc072f38a08364c16716`.
+Unichain and World Chain use the directly confirmed shared operations multisig. Fixed wrapped-native
+token addresses are sourced from `sushi-labs/sushi` at commit `30b6e3de015077a14b97dc072f38a08364c16716`.
 The canonical Permit2 deployment at `0x000000000022d473030f116ddee9f6b43ac78ba3` was checked for
 deployed bytecode on all eight launch chains.
 
 Before deployment, each chain still requires:
 
-1. Confirmation of the pool owner and protocol-fee-controller owner for Unichain and World Chain.
-2. A decision on the protocol fee split; the inherited controller default is 33% of total swap fees.
-3. Explorer verification settings.
+1. A decision on the protocol fee split; the inherited controller default is 33% of total swap fees.
+2. Explorer verification settings.
 
 The eight launch contracts use direct EVM `CREATE`, not CREATE2/CREATE3. Their addresses are determined
 only by the dedicated deployment account and nonce, and are precomputed in `plans/v4-cl.json`. The
