@@ -34,8 +34,10 @@ deployed bytecode on all eight launch chains.
 
 Before deployment, each chain still requires:
 
-1. A decision on the protocol fee split; the inherited controller default is 33% of total swap fees.
-2. Explorer verification settings.
+1. Explorer verification settings.
+
+The launch protocol share is fixed at 33% of each pool's total swap fee. Core setup validates the
+deployed controller's `330000 / 1000000` split before registering and handing off the CL contracts.
 
 The eight launch contracts use direct EVM `CREATE`, not CREATE2/CREATE3. Their addresses are determined
 only by the dedicated deployment account and nonce, and are precomputed in `plans/v4-cl.json`. The
