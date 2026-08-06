@@ -1,16 +1,21 @@
 {
   "release": "v4-cl",
   "poolTypes": ["CL"],
+  "toolchain": {
+    "foundryVersion": "1.5.1-stable",
+    "foundryCommit": "b0a9dd9ceda36f63e2326ce530c10e6916f4b8a2",
+    "solcVersion": "0.8.26"
+  },
   "core": {
     "repository": "https://github.com/sushi-labs/infinity-core.git",
-    "branch": "sushi-v4",
-    "commit": "df1c9de99d358a9f83edcca53d03cbbe1aaee5ae",
+    "branch": "main",
+    "commit": "8ecec6deca993624cea5541479d77cb2b937f92e",
     "upstreamBase": "7c04695faeab8b06570cf6c277d9a9717136fb26"
   },
   "periphery": {
     "repository": "https://github.com/sushi-labs/infinity-periphery.git",
-    "branch": "sushi-v4",
-    "commit": "95fe27e6c4c2b2d239bcb25c311975d4b5e0ffdf",
+    "branch": "main",
+    "commit": "59db5f733d79cf04a5ed577c41439c7115374747",
     "upstreamBase": "f39aef4a1be63e5404e686bf621436bbfe58f6aa"
   }
 }

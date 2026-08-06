@@ -29,5 +29,54 @@
     "42161": "0x978982772b8e4055B921bf9295c0d74eB36Bc54e",
     "56": "0xc6fD91aD4919Fd91e2c84077ba648092cB499638",
     "4663": "0x6fA4080b70eed82Cf48570DDE705026905a64657"
+  },
+  "verifiers": {
+    "1": {
+      "provider": "etherscan",
+      "apiUrl": "https://api.etherscan.io/v2/api?chainid=1",
+      "browserUrl": "https://etherscan.io",
+      "apiKeyEnv": "ETHERSCAN_API_KEY"
+    },
+    "8453": {
+      "provider": "etherscan",
+      "apiUrl": "https://api.etherscan.io/v2/api?chainid=8453",
+      "browserUrl": "https://basescan.org",
+      "apiKeyEnv": "ETHERSCAN_API_KEY"
+    },
+    "137": {
+      "provider": "etherscan",
+      "apiUrl": "https://api.etherscan.io/v2/api?chainid=137",
+      "browserUrl": "https://polygonscan.com",
+      "apiKeyEnv": "ETHERSCAN_API_KEY"
+    },
+    "130": {
+      "provider": "etherscan",
+      "apiUrl": "https://api.etherscan.io/v2/api?chainid=130",
+      "browserUrl": "https://uniscan.xyz",
+      "apiKeyEnv": "ETHERSCAN_API_KEY"
+    },
+    "480": {
+      "provider": "etherscan",
+      "apiUrl": "https://api.etherscan.io/v2/api?chainid=480",
+      "browserUrl": "https://worldscan.org",
+      "apiKeyEnv": "ETHERSCAN_API_KEY"
+    },
+    "42161": {
+      "provider": "etherscan",
+      "apiUrl": "https://api.etherscan.io/v2/api?chainid=42161",
+      "browserUrl": "https://arbiscan.io",
+      "apiKeyEnv": "ETHERSCAN_API_KEY"
+    },
+    "56": {
+      "provider": "etherscan",
+      "apiUrl": "https://api.etherscan.io/v2/api?chainid=56",
+      "browserUrl": "https://bscscan.com",
+      "apiKeyEnv": "ETHERSCAN_API_KEY"
+    },
+    "4663": {
+      "provider": "blockscout",
+      "apiUrl": "https://robinhoodchain.blockscout.com/api/",
+      "browserUrl": "https://robinhoodchain.blockscout.com"
+    }
   }
 }
