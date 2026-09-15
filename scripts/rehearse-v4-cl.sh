@@ -2,8 +2,8 @@
 set -euo pipefail
 
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-core_dir="$(cd "${repo_dir}/../infinity-core" && pwd)"
-periphery_dir="$(cd "${repo_dir}/../infinity-periphery" && pwd)"
+core_dir="${CORE_DIR:-$(cd "${repo_dir}/../infinity-core" && pwd)}"
+periphery_dir="${PERIPHERY_DIR:-$(cd "${repo_dir}/../infinity-periphery" && pwd)}"
 
 if [[ -f "${repo_dir}/.env" ]]; then
   set -a
@@ -39,6 +39,7 @@ configs=(
   arbitrum-mainnet
   bsc-mainnet
   robinhood-mainnet
+  arc-mainnet
 )
 
 start_at="${START_AT:-${configs[0]}}"
@@ -64,6 +65,7 @@ rpc_variables=(
   ARBITRUM_RPC_URL
   BSC_RPC_URL
   ROBINHOOD_RPC_URL
+  ARC_RPC_URL
 )
 
 anvil_pid=""
