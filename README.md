@@ -20,20 +20,22 @@ The initial Sushi pool policy is static-fee CL pools only. No official dynamic-f
 - Arbitrum
 - BNB Chain
 - Robinhood Chain
+- Arc
 
 Core and Periphery keep one staged config per chain under `script/config/`. A value of `"0x"` is an
 intentionally unresolved governance input. Deployment and ownership scripts reject placeholders when
 the corresponding value is required.
 
 Governance multisigs are sourced from the Sushi operations spreadsheet and direct confirmation from
-Sushi operations. Ethereum, Base, Polygon, Arbitrum, BNB Chain, and Robinhood Chain are populated.
+Sushi operations. Ethereum, Base, Polygon, Arbitrum, BNB Chain, Robinhood Chain, and Arc are populated.
 Unichain and World Chain use the directly confirmed shared operations multisig. Fixed wrapped-native
-token addresses are sourced from `sushi-labs/sushi` at commit `30b6e3de015077a14b97dc072f38a08364c16716`.
+token addresses are sourced from `sushi-labs/sushi` at commit `41a1d043ea8007109accf707319a6fe4a093b14e`.
 The canonical Permit2 deployment at `0x000000000022d473030f116ddee9f6b43ac78ba3` was checked for
-deployed bytecode on all eight launch chains.
+deployed bytecode on all nine launch chains.
 
 Explorer verification settings are pinned by chain in `plans/v4-cl.json`. Seven launch chains use
 Etherscan API V2 with one `ETHERSCAN_API_KEY`; Robinhood Chain uses its official Blockscout endpoint.
+Arc source verification is unavailable at launch.
 Verification must be performed only after nonce 7 is mined, and does not require the deployment key.
 
 The launch protocol share is configured to 33% of each static pool's total swap fee. Core setup

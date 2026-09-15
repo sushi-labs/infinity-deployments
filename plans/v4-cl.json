@@ -28,7 +28,8 @@
     "480": "0x679462063982f12188c5e0722aF2c2637cFd1872",
     "42161": "0x978982772b8e4055B921bf9295c0d74eB36Bc54e",
     "56": "0xc6fD91aD4919Fd91e2c84077ba648092cB499638",
-    "4663": "0x6fA4080b70eed82Cf48570DDE705026905a64657"
+    "4663": "0x6fA4080b70eed82Cf48570DDE705026905a64657",
+    "5042": "0x62ea314096DBe8eC792EA40E9c69021f2ae65aaB"
   },
   "verifiers": {
     "1": {
@@ -77,6 +78,10 @@
       "provider": "blockscout",
       "apiUrl": "https://robinhoodchain.blockscout.com/api/",
       "browserUrl": "https://robinhoodchain.blockscout.com"
+    },
+    "5042": {
+      "provider": "none",
+      "browserUrl": "https://arc-scan.org"
     }
   }
 }

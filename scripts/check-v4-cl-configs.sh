@@ -2,8 +2,8 @@
 set -euo pipefail
 
 repo_dir="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
-core_dir="$(cd "${repo_dir}/../infinity-core" && pwd)"
-periphery_dir="$(cd "${repo_dir}/../infinity-periphery" && pwd)"
+core_dir="${CORE_DIR:-$(cd "${repo_dir}/../infinity-core" && pwd)}"
+periphery_dir="${PERIPHERY_DIR:-$(cd "${repo_dir}/../infinity-periphery" && pwd)}"
 plan="${repo_dir}/plans/v4-cl.json"
 
 for command_name in cast forge jq; do
@@ -54,6 +54,7 @@ configs=(
   arbitrum-mainnet
   bsc-mainnet
   robinhood-mainnet
+  arc-mainnet
 )
 
 core_fields=(vault clPoolManager clProtocolFeeController clPoolManagerOwnerContract)
@@ -74,7 +75,8 @@ for config in "${configs[@]}"; do
     fail "${config} Periphery deployer does not match the plan"
 
   governance_owner="$(jq -er --arg chain_id "${chain_id}" '.governanceOwners[$chain_id]' "${plan}")"
-  jq -e --arg chain_id "${chain_id}" '.verifiers[$chain_id].provider and .verifiers[$chain_id].apiUrl' \
+  jq -e --arg chain_id "${chain_id}" \
+    '.verifiers[$chain_id].provider as $provider | $provider and ($provider == "none" or .verifiers[$chain_id].apiUrl)' \
     "${plan}" >/dev/null || fail "${config} has no verifier configuration"
   same_address "$(jq -er '.poolOwner' "${core_config}")" "${governance_owner}" || \
     fail "${config} pool owner does not match the plan"
@@ -106,4 +108,4 @@ done
 [[ "$(jq -er '.protocolFeePolicy.denominator' "${plan}")" == "1000000" ]] || \
   fail "protocol fee denominator must be 1000000"
 
-echo "SushiSwap V4 CL plan and all eight chain configs are consistent"
+echo "SushiSwap V4 CL plan and all nine chain configs are consistent"
